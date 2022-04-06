@@ -11,9 +11,7 @@ def setup_desktop():
     # This is only readable, writeable & searchable by our uid
     sockets_dir = tempfile.mkdtemp()
     sockets_path = os.path.join(sockets_dir, 'vnc-socket')
-    vncserver = which('vncserver')
-
-    if vncserver:
+    if vncserver := which('vncserver'):
         vnc_args = [
             vncserver,
         ]
